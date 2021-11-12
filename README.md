@@ -59,41 +59,68 @@ CREATE TABLE Athlete
     ID                        	int,
     
     Name                  	varchar(50),
+    
     Sex		          	varchar(1),
+    
     Age                     	float,    
+    
     Height                 	float,
-    Weight                 float,
-    Team	      	varchar(50)
+    
+    Weight                 	float,
+    
+    Team	      		varchar(50)
+    
     NOC                   	varchar(3),
+    
     Year                    	int,
+    
     City			varchar(25),
-               Sport                   	varchar(25),
-               Event		varchar(100),
-    Medal                   varchar(8),
+    
+    Sport                   	varchar(25),
+    
+    Event			varchar(100),
+    
+    Medal                   	varchar(8),
+    
     PRIMARY KEY (ID),
+    
     FOREIGN KEY(NOC) REFERENCES Countries(code)
+    
 );
+
 CREATE TABLE GDP
+
 (
-    `Country Name` 		 varchar(25)
-    `country_code`                   varchar(20),
-    Year2000                         float,
-    Year2004                          float,
-    Year2008                          float,
-    Year2012                          float,
-    Year2016                          float,
+
+    `Country Name` 		 	varchar(25)
+    
+    `country_code`                   	varchar(20),
+    
+    Year2000                         	float,
+    
+    Year2004                          	float,
+    
+    Year2008                          	float,
+    
+    Year2012                          	float,
+    
+    Year2016                          	float,
+    
     PRIMARY KEY(country_code)
+    
 );
 
 CREATE TABLE COVID(
-    country                           varchar(25),
-    total_cases_till_today      int,
-    positive_rate                    float
+
+    country                           	varchar(25),
+    total_cases_till_today      	int,
+    positive_rate                    	float
     PRIMARY KEY(country));
 
 CREATE TABLE Health(
+
     country                           varchar(25),
-    undernourished_population float,
+    undernourished_population 	      float,
     Year2000                          float,
     Year2004                          float,
     Year2008                          float,
@@ -101,17 +128,31 @@ CREATE TABLE Health(
     Year2016                          float,
     PRIMARY KEY(country)
 )
+
 Cleaning and pre-processing the data:
+
 Drop countries that did not participate in Olympics from the datasets other than Olympics related datasets
+
 Select years matching the Olympics years for the datasets other than Olympics related datasets
+
 Drop countries that contain too many null values in our features
+
 List of technologies:
+
 VIew: React, HTML, CSS
+
 Model: Express, RESTful
+
 Controller: MySQL, AWS(RDS), NodeJS
+
 Others: ER diagram
+
 Each member’s responsibility: Each member will be responsible for one web page application.
+
 Fu-Lin Hsu: the web page for correlation between the 2020 covid and countries’ performance
+
 Szu-Chia Li: the webpage that displays the performance of countries in the Olympics
+
 Jiaxin Wang: the webpage that shows the relationship between the number of people who are undernourished and countries’ athlete’s ages. 
+
 Esther Xu: the webpage that shows the relationship between countries’ GDP and their performance for the Olympics before Covid.
