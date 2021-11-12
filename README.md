@@ -3,35 +3,61 @@
 Motivation:  All of our members are interested in sports, and Tokyo Olympics had been held a few months ago, so we would like to combine the features of the Olympics and the most popular topic recently, which is Covid-19, to gain some insight from them.
 
 List of features: 
+
 display the performance of countries in the Olympics, including total medals, sex distribution, average age, and the athlete’s list that can be filtered by different sports. 
+
 Olympics before Covid, we will show the relationship between countries’ GDP and their performance. 
+
 Show the relationship between the number of people who are undernourished and countries’ athlete’s ages. 
+
 For the 2021 Tokyo Olympics, our website will display the correlation between the 2020 covid and countries’ performance.
+
 List of features that we might implement:
+
 “Country vs Country” feature: take in two countries and a sport as input, output which country will have a higher chance to win. 
+
 List of pages of the application:
+
 Countries performance: show the performance of each country
+
 Countries and GDP: show countries GDP and their performance
+
 Show the relationship of the number of undernourished people and athlete’s age
+
 Show the relationship between the percentage of people diagnosed with Covid in the country and their performance
+
 Databases:  
 	
 Athlete(id,name,age,sex, height,weight, Team, NOC,Year,City,Sport,Event,Medal)
+
 Countries(code, country, population)
+
 GDP(country_code, Year2000,Year2004,Year2008,Year2012.Year2016)
+
 COVID(country, total_cases_till_today, positive_rate)
+
 Health(country, undernourished_population, Year2000,Year2004,Year2008,Year2012.Year2016)
 
 CREATE TABLE Countries
+
 (
+
     code                    varchar(3),
+    
     country                 varchar(25),
+    
     population              float,
+    
     PRIMARY KEY (code)
+    
 );
+
 CREATE TABLE Athlete
+
 (
+
     ID                        	int,
+    
     Name                  	varchar(50),
     Sex		          	varchar(1),
     Age                     	float,    
