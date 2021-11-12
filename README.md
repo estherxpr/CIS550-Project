@@ -1,10 +1,10 @@
 # CIS550-Project
 
-Motivation:  All of our members are interested in sports, and Tokyo Olympics had been held a few months ago, so we would like to combine the features of the Olympics and the most popular topic recently, which is Covid-19, to gain some insight from them.
+#Motivation:  All of our members are interested in sports, and Tokyo Olympics had been held a few months ago, so we would like to combine the features of the Olympics and the most popular topic recently, which is Covid-19, to gain some insight from them.
 
-List of features: 
-display the performance of countries in the Olympics, including total medals, sex distribution, average age, and the athlete’s list that can be filtered by different sports. \\
-Olympics before Covid, we will show the relationship between countries’ GDP and their performance. 
+#List of features: 
+#display the performance of countries in the Olympics, including total medals, sex distribution, average age, and the athlete’s list that can be filtered by different sports. 
+#Olympics before Covid, we will show the relationship between countries’ GDP and their performance. 
 Show the relationship between the number of people who are undernourished and countries’ athlete’s ages. 
 For the 2021 Tokyo Olympics, our website will display the correlation between the 2020 covid and countries’ performance.
 List of features that we might implement:
