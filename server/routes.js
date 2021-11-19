@@ -36,7 +36,7 @@ async function olympics_covid_country(req, res) {
     const query = `
 		SELECT O.Country, O.Gold, O.Silver, O.Bronze, O.Total_Medal, O.Ranking, C.confirmed_rate
 		FROM 2021_Olympic O JOIN Covid_Countries C ON O.Country = C.Country
-		WHERE O.Country = ${country};
+		WHERE O.Country LIKE '${country}';
     `;
     connection.query(query, function (err, rows, fields) {
         if (err) {
@@ -50,13 +50,13 @@ async function olympics_covid_country(req, res) {
 async function covid_countries_avg(req, res) {
     const query = `
 		(
-			SELECT O.Country, C.confirmed_rate, '+'
+			SELECT O.Country, C.confirmed_rate, '+' as Mark
 			FROM 2021_Olympic O JOIN Covid_Countries C ON O.Country = C.Country
 			WHERE C.confirmed_rate >= (SELECT AVG(confirmed_rate) FROM Covid_Countries)
 		)
 		UNION
 		(
-			SELECT O.Country, C.confirmed_rate, '-'
+			SELECT O.Country, C.confirmed_rate, '-' as Mark
 			FROM 2021_Olympic O JOIN Covid_Countries C ON O.Country = C.Country
 			WHERE C.confirmed_rate < (SELECT AVG(confirmed_rate) FROM Covid_Countries)
 		);
