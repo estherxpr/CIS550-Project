@@ -166,11 +166,79 @@ async function country_athletes_performance(req, res){
     });
 }
 
+async function country_gdp_with_performance(req, res) {
+    const country = req.query.Country ? '%' + req.query.Country + '%' : '%';
+    const year = req.query.Year ? req.query.Year : 2016
+    const query = `
+        WITH M AS (
+            SELECT A.NOC AS NOC,C.country AS Country A.Year AS Year, COUNT(*) AS medals_numbers
+            FROM Athlete A JOIN Country C ON A.NOC = C.code
+            GROUP BY A.NOC, A.Year
+        )
+		SELECT M.Country,M.metals_numbers,G.GDP 
+		FROM M, GDP AS G 
+		WHERE M.Country LIKE '${country}' AND M.Year = ${year};
+    `;
+    connection.query(query, function (err, rows, fields) {
+        if (err) {
+            res.status(404).json({error: 'Country not found'});
+        } else {
+            res.status(200).json({results: rows, msg: 'retrieving information of the country successfully'});
+        }
+    });
+}
+
+async function olympics_health_age(req, res) {
+    const sports = req.query.Sport? '%' + req.query.Sport + '%': '%';
+    const country = req.query.Country ? '%' + req.query.Country + '%' : '%';
+    const year = req.query.Year ? req.query.Year : 2016
+    const query = `
+        WITH AGE AS (
+            SELECT A.NOC, A.year, AVG(A.age) AS avg_age, MIN(A.age) AS min_age, MAX(A.age) AS max_age,COUNT(*) AS medal_numbers FROM Athlete A WHERE A.Sport = '${sports}' A.Year = ${year} GROUP BY A.NOC,A.Year
+        ) ,
+		SELECT C.Country AS country, AGE.avg_age AS avg_age , AGE.min_age AS min_age, AGE.max_age AS mAX_age,AGE.medal_numbers AS total_medals
+		FROM AGE JOIN Countries C ON AGE.NOC = C.code
+		WHERE C.Country LIKE '${country}';
+    `;
+    connection.query(query, function (err, rows, fields) {
+        if (err) {
+            res.status(404).json({error: 'Country not found'});
+        } else {
+            res.status(200).json({results: rows, msg: 'retrieving information of the country successfully'});
+        }
+    });
+}
+
+async function olympics_health_undernourished(req, res) {
+    const country = req.query.Country ? '%' + req.query.Country + '%' : '%';
+    const year = req.query.Year ? req.query.Year : 2016
+    const query = `
+		WITH M AS (
+            SELECT A.NOC AS NOC,C.country AS Country A.Year AS Year, COUNT(*) AS medals_numbers
+            FROM Athlete A
+            GROUP BY A.NOC, A.Year
+        )
+		SELECT H.country,M.metals_numbers AS total_medals,H.Undernourished_Rate AS Undernourished_Rate
+		FROM M JOIN Health H ON M.NOC = H.country_code AND H.Year = M.Year
+		WHERE H.Country LIKE '${country}' AND H.Year = ${year};
+    `;
+    connection.query(query, function (err, rows, fields) {
+        if (err) {
+            res.status(404).json({error: 'Country not found'});
+        } else {
+            res.status(200).json({results: rows, msg: 'retrieving information of the country successfully'});
+        }
+    });
+}
+
 module.exports = {
     search_covid_countries,
     olympics_covid_country,
     covid_countries_avg,
     country_year_performance,
     country_sport_performance,
-    country_athletes_performance
+    country_athletes_performance,
+    country_gdp_with_performance,
+    olympics_health_age,
+    olympics_health_undernourished
 }
