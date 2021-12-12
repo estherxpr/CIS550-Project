@@ -21,6 +21,15 @@ app.get('/covid', routes.olympics_covid_country)
 // Route 3
 app.get('/covid/countries', routes.covid_countries_avg)
 
+// Route 4
+app.get('/olympics/year', routes.country_year_performance)
+
+// Route 5
+app.get('/olympics/sports', routes.country_sport_performance)
+
+// Route 6
+app.get('/olympics/athletes', routes.country_athletes_performance)
+
 
 app.listen(config.server_port, () => {
     console.log(`Server running at http://${config.server_host}:${config.server_port}/`);
