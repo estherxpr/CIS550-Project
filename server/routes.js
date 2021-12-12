@@ -47,6 +47,20 @@ async function olympics_covid_country(req, res) {
     });
 }
 
+async function olympics2020_rank_avg(req, res) {
+    const query = `
+        SELECT AVG(Ranking) as average
+        FROM 2021_Olympic;
+    `;
+    connection.query(query, function (err, rows, fields) {
+        if (err) {
+            res.status(404).json({error: 'resource not found'});
+        } else {
+            res.status(200).json({results: rows, msg: 'get average ranking successfully'});
+        }
+    });
+}
+
 async function covid_countries_avg(req, res) {
     const query = `
 		(
@@ -235,6 +249,7 @@ module.exports = {
     search_covid_countries,
     olympics_covid_country,
     covid_countries_avg,
+    olympics2020_rank_avg,
     country_year_performance,
     country_sport_performance,
     country_athletes_performance,
