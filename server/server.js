@@ -39,6 +39,9 @@ app.get('/olympics/health/age', routes.olympics_health_age)
 // Route 9
 app.get('/olympics/health/undernourished', routes.olympics_health_undernourished)
 
+// Route 10
+app.get('/covid/olympics/rank/avg', routes.olympics2020_rank_avg)
+
 app.listen(config.server_port, () => {
     console.log(`Server running at http://${config.server_host}:${config.server_port}/`);
 });
