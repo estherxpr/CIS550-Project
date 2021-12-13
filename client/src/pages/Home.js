@@ -11,12 +11,12 @@ import CarouselCaption from 'react-bootstrap/Carousel'
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageNavbar from "../components/MenuNavBar.js";
-import image0 from "./olympics.webp"
-import image1 from "./olympics.webp"
-import image2 from "./olympics.webp"
-import image3 from "./olympics.webp"
-import image4 from "./olympics.webp"
-import image5 from "./olympics.webp"
+import image0 from "./photos/img1.webp"
+import image1 from "./photos/img1.webp"
+import image2 from "./photos/img1.webp"
+import image3 from "./photos/img1.webp"
+import image4 from "./photos/img1.webp"
+import image5 from "./photos/img1.webp"
 
 export default class HomePage extends React.Component {
     constructor(props) {

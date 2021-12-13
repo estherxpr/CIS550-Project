@@ -1,4 +1,6 @@
 .img-container {
+    position:absolute;
+    top:10px;
     text-align: center;
     display: block;
 }

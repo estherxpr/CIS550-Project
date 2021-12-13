@@ -1,0 +1,29 @@
+.carousel-caption {
+    position: absolute;
+    top:275px
+}
+.card {
+    display: flex;
+    text-align: center;
+    color: white;
+    opacity:0.9;
+}
+.img{
+    max-width: 100%;
+    height: auto;
+}
+.carousel-control-prev{
+    background-color: transparent;
+    color:black;
+    font-weight: bold;
+    font-size: larger;
+    border:none;
+}
+
+.carousel-control-next{
+    background-color: transparent;
+    color:white;
+    font-weight: bold;
+    font-size: larger;
+    border:none;
+}

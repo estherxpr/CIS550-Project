@@ -18,11 +18,17 @@ import "shards-ui/dist/css/shards.min.css"
 import AgePage from "./pages/AgePage";
 import UndernourishedPage from "./pages/UndernouirshedPage";
 import HealthPage from "./pages/HealthPage";
+import HomePage from "./pages/HomePage";
 
 ReactDOM.render(
   <div>
     <Router>
       <Switch>
+		  <Route exact
+				 path="/"
+				 render={() => (
+					 <HomePage />
+				 )}/>
         <Route exact path="/page/covidcountry" render={() => ( <CovidCountryPage />)}/>
 		<Route exact
 							path="/olympics/year"

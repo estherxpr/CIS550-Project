@@ -61,9 +61,9 @@ export default class MenuNavBar extends React.Component {
                             height="45"
                             className="d-inline-block icon"
                             loading="lazy"
-                        /></span>
+                        />
 
-                        <p className="web-name centered-and-flexed">Olympedia</p>
+                        <p className="web-name centered-and-flexed">Olympedia</p></span>
                     </a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav ml-auto">{this.state.navDivs}</div>
