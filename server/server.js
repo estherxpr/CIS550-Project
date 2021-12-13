@@ -33,11 +33,15 @@ app.get('/olympics/athletes', routes.country_athletes_performance)
 // Route 7
 app.get('/GDP/countries', routes.country_gdp_with_performance)
 
+// Route 7
+app.get('/search/GDP/countries', routes.search_country_gdp_with_performance)
+
 // Route 8
 app.get('/olympics/health/age', routes.olympics_health_age)
-
+app.get('/search/health/age', routes.olympics_health_age)
 // Route 9
 app.get('/olympics/health/undernourished', routes.olympics_health_undernourished)
+app.get('/search/health/undernourished', routes.olympics_health_undernourished)
 
 app.listen(config.server_port, () => {
     console.log(`Server running at http://${config.server_host}:${config.server_port}/`);
