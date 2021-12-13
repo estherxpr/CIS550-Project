@@ -22,13 +22,13 @@ app.get('/covid', routes.olympics_covid_country)
 app.get('/covid/countries', routes.covid_countries_avg)
 
 // Route 4
-app.get('/olympics/year', routes.country_year_performance)
+app.get('/olympics/year', routes.countries_of_year)
 
 // Route 5
-app.get('/olympics/sports', routes.country_sport_performance)
+app.get('/olympics/year/country', routes.country_year_performance)
 
 // Route 6
-app.get('/olympics/athletes', routes.country_athletes_performance)
+app.get('/olympics/sports', routes.country_sport_performance)
 
 // Route 7
 app.get('/GDP/countries', routes.country_gdp_with_performance)
