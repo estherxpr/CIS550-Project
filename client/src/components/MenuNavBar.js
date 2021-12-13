@@ -21,6 +21,7 @@ export default class MenuNavBar extends React.Component {
 
         const navbarDivs = pageList.map((page, i) => {
             // eslint-disable-next-line react/prop-types
+            let pageName = page;
             if (this.props.active === page) {
                 return (
                     <a className="nav-item nav-link active" key={i} href={`/olympics/${page}`}>
