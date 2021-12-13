@@ -21,8 +21,16 @@ const getCountryPerform = async(Country) => {
     return res.json();
 };
 
+const getCovidCountryMark = async() => {
+    const res = await fetch(`${domain}/covid/countries`, {
+        method: 'GET',
+    });
+    return res.json();
+};
+
 export {
     getCovidCountrySearch,
     getCountryRankAvg,
     getCountryPerform,
+    getCovidCountryMark,
 };
