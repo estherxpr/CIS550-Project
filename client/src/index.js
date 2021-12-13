@@ -23,11 +23,6 @@ ReactDOM.render(
   <div>
     <Router>
       <Switch>
-        <Route exact
-			   path="/"
-			   render={() => (
-			   	<HomePage />
-			   )}/>
         <Route exact path="/page/covidcountry" render={() => ( <CovidCountryPage />)}/>
 		<Route exact
 							path="/olympics/year"

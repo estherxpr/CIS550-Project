@@ -17,23 +17,32 @@ export default class MenuNavBar extends React.Component {
     }
 
     componentDidMount() {
-        const pageList = ["2020 Olympics", "year", "GDP", "health"];
+        const pageList = ["2020 Olympics", "year", "country", "sports", "GDP", "health"];
 
         const navbarDivs = pageList.map((page, i) => {
             // eslint-disable-next-line react/prop-types
-            let pageName = page;
-            if (this.props.active === page) {
-                return (
+            let temp;
+            if (page === '2020 Olympics') {
+                temp = (
+                    <a className="nav-item nav-link active" key={i} href={`/page/covidcountry`}>
+                        {page.charAt(0).toUpperCase() + page.substring(1, page.length)}
+                    </a>
+                );
+            } else if (page === 'country') {
+                temp = (
+                    <a className="nav-item nav-link active" key={i} href={`/olympics/year/${page}`}>
+                        {page.charAt(0).toUpperCase() + page.substring(1, page.length)}
+                    </a>
+                );
+            } else {
+                temp = (
                     <a className="nav-item nav-link active" key={i} href={`/olympics/${page}`}>
                         {page.charAt(0).toUpperCase() + page.substring(1, page.length)}
                     </a>
                 );
             }
-            return (
-                <a className="nav-item nav-link" key={i} href={`/olympics/${page}`}>
-                    {page.charAt(0).toUpperCase() + page.substring(1, page.length)}
-                </a>
-            );
+
+            return temp;
         });
 
         this.setState({

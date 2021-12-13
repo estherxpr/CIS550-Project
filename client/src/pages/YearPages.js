@@ -8,12 +8,11 @@ import {
     Row,
     Col,
     Divider,
-
 } from 'antd'
 
 import { getAllCountriesOfYear} from '../Countryfetcher'
 
-import MenuBar from '../components/MenuBar';
+import MenuNavBar from '../components/MenuNavBar';
 
 const { Column, ColumnGroup } = Table;
 // const { Option } = Select;
@@ -76,9 +75,9 @@ class YearPages extends React.Component {
         this.setState({country: event.target.value})
     } 
 
-    updateYearResults(event) {  
-        this.setState({year:parseInt(event.target.value)})
-        getAllCountriesOfYear(this.state.year).then(res => {
+    updateYearResults(obj) {  
+        // this.setState({year:parseInt(event.target.value)})
+        getAllCountriesOfYear(parseInt(obj)).then(res => {
             this.setState({ yearResults: res.results })
         }) 
     }
@@ -93,15 +92,15 @@ class YearPages extends React.Component {
     render() {
         return (
           <div>
-            <MenuBar/>
+            <MenuNavBar/>
             <div style={{ width: '70vw', margin: '0 auto', marginTop: '5vh' }}>
                 <Row gutter='30' align='middle' justify='center'>
                     <Col flex={2} style={{ textAlign: 'center' }}>
                         <h3>The {this.state.year} Olympics</h3>
                     </Col>
                 </Row>
-                <Row gutter='30' align='middle' justify='center'>
-                    <select style={{ width: 120 }} onChange={this.updateYearResults}>
+                <Row gutter='30' align='middle' justify='center' style={{ margin: '20px auto' }}>
+                    <select style={{ width: 120 }} onChange={(e) => {this.updateYearResults(e.target.value)}}>
                     <option selected value="2016">2016</option>
                     <option value="2012">2012</option>
                     <option value="2008">2008</option>

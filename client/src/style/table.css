@@ -8,5 +8,8 @@
 }
 .ant-table-thead > tr >th{
     color: white !important;
-    background: #3071b9 !important;
+    background: rgb(0, 166, 0) !important;
+}
+.btn{
+    border: 0px solid #fff !important; 
 }

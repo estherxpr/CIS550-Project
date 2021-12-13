@@ -24,7 +24,7 @@ import {
 import { RadarChart } from 'react-vis';
 import { format } from 'd3-format';
 
-import MenuBar from '../components/MenuBar';
+import MenuNavBar from '../components/MenuNavBar';
 import {
     getCovidCountrySearch,
     getCountryRankAvg,
@@ -170,7 +170,7 @@ class CovidCountryPage extends React.Component {
     render() {
         return (
 			<div>
-                <MenuBar />
+                <MenuNavBar />
                 <Row>
                     <Col span={6}>
                         <Row>
@@ -199,7 +199,7 @@ class CovidCountryPage extends React.Component {
                                 </Row>
                                 <Row>
                                     <FormGroup style={{ margin: '0 auto' }}>
-                                        <Button style={{ width: '100px', height: '30px', textAlign: 'center', lineHeight: '0px' }} onClick={this.updateSearchResults}>Search</Button>
+                                        <Button style={{ width: '100px', height: '30px', textAlign: 'center', lineHeight: '0px', backgroundColor: 'rgb(255, 146, 36)' }} onClick={this.updateSearchResults}>Search</Button>
                                     </FormGroup>
                                 </Row>
                                 <Row>

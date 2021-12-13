@@ -13,7 +13,7 @@ import {
 
 import {getSportsPerformance} from '../Countryfetcher'
 
-import MenuBar from '../components/MenuBar';
+import MenuNavBar from '../components/MenuNavBar';
 
 const { Column, ColumnGroup } = Table;
 // const { Option } = Select;
@@ -60,7 +60,7 @@ class SportsPages extends React.Component {
     render() {
         return (
           <div>
-            <MenuBar/>
+            <MenuNavBar/>
             <Form style={{ width: '80vw', margin: '0 auto', marginTop: '5vh' }}>
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
@@ -72,7 +72,7 @@ class SportsPages extends React.Component {
                             <FormInput placeholder="Country" onChange={this.handleCountryChange} />
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '10vw' }}>
-                            <Button style={{ marginTop: '4vh' }} onClick={this.updateSportsCountry}>Search</Button>
+                            <Button style={{ backgroundColor: 'rgb(255, 146, 36)', marginTop: '4vh' }} onClick={this.updateSportsCountry}>Search</Button>
                         </FormGroup></Col>
                     </Row>                           
             </Form>
