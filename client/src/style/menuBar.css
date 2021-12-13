@@ -4,6 +4,8 @@
 }
 .navbar-custom {
     background-color: #006400;
+    height: 95px;
+    padding: 0 10px;
 }
 .navbar-nav{
     font-weight: bold;
