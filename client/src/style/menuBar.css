@@ -1,0 +1,12 @@
+.img-container {
+    text-align: center;
+    display: block;
+}
+.navbar-custom {
+    background-color: #006400;
+}
+.navbar-nav{
+    font-weight: bold;
+    color:white;
+    float: right;
+}

@@ -14,7 +14,11 @@ package-lock.json
 
 # production
 /build
+<<<<<<< HEAD
+/config.json
+=======
 
+>>>>>>> main
 # misc
 .DS_Store
 .env.local

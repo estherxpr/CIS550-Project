@@ -6,6 +6,7 @@ import {
 	Switch
 } from 'react-router-dom';
 
+import GdpPage from './pages/gdpPage';
 import CovidCountryPage from './pages/CovidCountryPage';
 import YearPages from './pages/YearPages';
 import CountryPages from './pages/CountryPages';
@@ -14,10 +15,19 @@ import 'antd/dist/antd.css';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
+import AgePage from "./pages/AgePage";
+import UndernourishedPage from "./pages/UndernouirshedPage";
+import HealthPage from "./pages/HealthPage";
+
 ReactDOM.render(
   <div>
     <Router>
       <Switch>
+        <Route exact
+			   path="/"
+			   render={() => (
+			   	<HomePage />
+			   )}/>
         <Route exact path="/page/covidcountry" render={() => ( <CovidCountryPage />)}/>
 		<Route exact
 							path="/olympics/year"
@@ -34,6 +44,26 @@ ReactDOM.render(
 							render={() => (
 								<SportsPages />
 							)}/>
+        <Route exact
+               path="/olympics/GDP"
+               render={() => (
+                   <GdpPage />
+               )}/>
+        <Route exact
+               path="/olympics/health"
+               render={() => (
+                   <HealthPage />
+               )}/>
+        <Route exact
+               path="/olympics/health/age"
+               render={() => (
+                   <AgePage />
+               )}/>
+        <Route exact
+               path="/olympics/health/undernourished"
+               render={() => (
+                   <UndernourishedPage />
+               )}/>
       </Switch>
     </Router>
   </div>,

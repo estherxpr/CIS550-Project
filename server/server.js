@@ -31,13 +31,17 @@ app.get('/olympics/year/country', routes.country_year_performance)
 app.get('/olympics/sports', routes.country_sport_performance)
 
 // Route 7
-app.get('/GDP/countries', routes.country_gdp_with_performance)
+app.get('/olympics/GDP', routes.country_gdp_with_performance)
+
+// Route 7
+app.get('/search/GDP/countries', routes.search_country_gdp_with_performance)
 
 // Route 8
 app.get('/olympics/health/age', routes.olympics_health_age)
-
+app.get('/search/health/age', routes.olympics_health_age)
 // Route 9
 app.get('/olympics/health/undernourished', routes.olympics_health_undernourished)
+app.get('/search/health/undernourished', routes.olympics_health_undernourished)
 
 // Route 10
 app.get('/covid/olympics/rank/avg', routes.olympics2020_rank_avg)
