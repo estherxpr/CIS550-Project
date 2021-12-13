@@ -4,25 +4,22 @@ import {
     FormInput,
     FormGroup,
     Button,
+    ButtonGroup,
     Card,
     CardHeader,
     CardBody,
     CardTitle,
     CardFooter,
-    Progress,
 }
 from "shards-react";
 
 import {
-    Layout,
     Table,
     Pagination,
-    Select,
     Row,
     Col,
-    Divider,
     Slider,
-    Rate 
+    Divider,
 } from 'antd'
 import { RadarChart } from 'react-vis';
 import { format } from 'd3-format';
@@ -32,9 +29,9 @@ import {
     getCovidCountrySearch,
     getCountryRankAvg,
     getCountryPerform,
+    getCovidCountryMark,
 } from '../covidFetcher';
 const wideFormat = format('.3r');
-const { Header, Footer, Sider, Content } = Layout;
 
 // render: (text, row) => <a href={`/players?id=${row.PlayerId}`}>{text}</a>
 const CovidCountryColumns = [
@@ -59,6 +56,27 @@ const CovidCountryColumns = [
     },
 ];
 
+const CovidCountryMarkColumns = [
+    {
+        title: 'Nation',
+        dataIndex: 'Country',
+        key: 'Country',
+        sorter: (a, b) => a.Country.localeCompare(b.Country),
+    },
+    {
+        title: 'Confirmed Rate',
+        dataIndex: 'confirmed_rate',
+        key: 'confirmed_rate',
+        sorter: (a, b) => a.confirmed_rate - b.confirmed_rate,
+
+    },
+    {
+        title: 'Average',
+        dataIndex: 'Mark',
+        key: 'Mark',
+        sorter: (a, b) => a.Mark.localeCompare(b.Mark),
+    },
+];
 
 class CovidCountryPage extends React.Component {
     constructor(props) {
@@ -68,11 +86,13 @@ class CovidCountryPage extends React.Component {
             ConfirmedRateLow: 0,
             ConfirmedRateHigh: 100,
             CovidCountryResults: [],
+            CovidCountryMarkResults: [],
             showAnswer: false,
             questionCountry: 'Argentina',
             questionAnswer: null,
             questionAvg: null,
             userAnswer: null,
+            showLeft: true,
         };
         this.handleSearchCountry = this.handleSearchCountry.bind(this);
         this.handleSearchConfirmedRate = this.handleSearchConfirmedRate.bind(this);
@@ -80,6 +100,16 @@ class CovidCountryPage extends React.Component {
         this.showCard = this.showCard.bind(this);
         this.answerQuestionUpper = this.answerQuestionUpper.bind(this);
         this.answerQuestionLower = this.answerQuestionLower.bind(this);
+        this.handleClickTotal = this.handleClickTotal.bind(this);
+        this.handleClickAVG = this.handleClickAVG.bind(this);
+    }
+
+    handleClickTotal() {
+        this.setState({ showLeft: true });
+    }
+
+    handleClickAVG() {
+        this.setState({ showLeft: false });
     }
 
     handleSearchCountry(e) {
@@ -130,6 +160,11 @@ class CovidCountryPage extends React.Component {
             this.setState({ userAnswer: null });
             this.setState({ showAnswer: false });
         });
+        this.setState({ showLeft: true });
+
+        getCovidCountryMark().then(res => {
+            this.setState({ CovidCountryMarkResults: res.results });
+        });
     }
 
     render() {
@@ -139,23 +174,48 @@ class CovidCountryPage extends React.Component {
                 <Row>
                     <Col span={6}>
                         <Row>
-                            <FormGroup style={{width: '40%', margin: '15px 0px 15px 20px' }}>
-                                <label>Search Nations</label>
-                                <FormInput placeholder="Country Name" value={this.state.Country} onChange={this.handleSearchCountry} />
-                            </FormGroup>
-                            <FormGroup style={{ margin: '15px 0px 15px 25px' }}>
-                                <label>Confirmed Rate</label>
-                                <Slider range defaultValue={[0, 100]} onChange={this.handleSearchConfirmedRate} />
-                            </FormGroup>
-                            <FormGroup style={{ margin: 'auto 20px' }}>
-                                <Button style={{ width: '100px', height: '30px', textAlign: 'center', lineHeight: '0px' }} onClick={this.updateSearchResults}>Search</Button>
-                            </FormGroup>
+                            <ButtonGroup size="sm" className="mr-2" style={{margin: '15px 0px 0px 20px'}}>
+                                <Button onClick={this.handleClickTotal} style={{backgroundColor:'#02DF82', border:'0'}}>
+                                    Total
+                                </Button>
+                                <Button onClick={this.handleClickAVG} style={{backgroundColor:'#FF9224', border:'0'}}>
+                                    AVG.
+                                </Button>
+                            </ButtonGroup>
                         </Row>
-                        <Row>
-                            <Table onRow={(record, rowIndex) => {
+                        <Divider />
+                        { this.state.showLeft
+                          ? ( 
+                            <div>
+                                <Row justify='space-around'>
+                                    <FormGroup style={{width: '40%', margin: '0px 0px 15px 0px' }}>
+                                        <label>Search Nations</label>
+                                        <FormInput placeholder="Country Name" value={this.state.Country} onChange={this.handleSearchCountry} />
+                                    </FormGroup>
+                                    <FormGroup style={{ margin: '0px 0px 15px 0px' }}>
+                                        <label>Confirmed Rate</label>
+                                        <Slider range defaultValue={[0, 100]} onChange={this.handleSearchConfirmedRate} />
+                                    </FormGroup>
+                                </Row>
+                                <Row>
+                                    <FormGroup style={{ margin: '0 auto' }}>
+                                        <Button style={{ width: '100px', height: '30px', textAlign: 'center', lineHeight: '0px' }} onClick={this.updateSearchResults}>Search</Button>
+                                    </FormGroup>
+                                </Row>
+                                <Row>
+                                    <Table onRow={(record, rowIndex) => {
+                                        return {onClick: event => {this.showCard(record.Country)},};
+                                    }} style={{ width: '100%', marginTop: '15px' }} dataSource={this.state.CovidCountryResults} columns={CovidCountryColumns} pagination={{ defaultPageSize: 8, simple: true }} rowKey={record=>record.Country}/>
+                                </Row>
+                            </div>
+                          )
+                          : (
+                            <Row>
+                              <Table onRow={(record, rowIndex) => {
                                 return {onClick: event => {this.showCard(record.Country)},};
-                            }} style={{ width: '100%', marginTop: '15px' }} dataSource={this.state.CovidCountryResults} columns={CovidCountryColumns} pagination={{ defaultPageSize: 8, simple: true }} rowKey={record=>record.Country}/>
-                        </Row>
+                                }} style={{ width: '100%', marginTop: '15px' }} dataSource={this.state.CovidCountryMarkResults} columns={CovidCountryMarkColumns} pagination={{ defaultPageSize: 8, simple: true }} rowKey={record=>record.Country}/>
+                            </Row>
+                          )}
                     </Col>
                     <Col span={18}>
                         <h2 style={{ maxWidth: '50vw', margin: '0 auto', marginTop: '80px' }}>
