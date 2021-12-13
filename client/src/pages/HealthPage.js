@@ -2,11 +2,14 @@ import React from 'react';
 import {
     Table,
     Pagination,
-    Select
+    Select,
+    Card
 } from 'antd'
 
 import MenuBar from '../components/MenuBar';
 import MenuNavBar from "../components/MenuNavBar";
+import youngest from "./olympics_youngest.jpg";
+import undernourished from "./undernourished.jpg";
 const { Column, ColumnGroup } = Table;
 const { Option } = Select;
 
@@ -17,47 +20,47 @@ class HealthPage extends React.Component {
         return (
             <div>
                 <MenuNavBar />
-                <div class="container">
+                <div style={{ width: '70vw', margin: '0 auto', marginTop: '5vh', marginBottom:'10vh', paddingBottom:'10vh'}} className="container">
 
                     <h3>Health</h3>
 
-                    <div class="row">
+                    <div className="row">
 
-                        <div class="col-sm-6">
+                        <div className="col-sm-6">
 
-                            <div class="card">
+                            <div className="card">
 
-                                <img class="card-img-top" src="" alt="the image alt text here">
+                                <img src={youngest} alt="the image alt text here"/>
 
-                                    <div class="card-body text-center">
+                                    <div className="card-body text-center">
 
-                                        <h5 class="card-title">Services Title 1</h5>
+                                        <h5 className="card-title">Services Title 1</h5>
 
-                                        <p class="card-text text-left">Place some text for the service 1 here. </p>
+                                        <p className="card-text text-left">Place some text for the service 1 here. </p>
 
-                                        <a href="#" class="btn btn-warning">More info</a>
+                                        <a style={{color:"#ffffff", background:"#66CDAA"}} href="/olympics/health/age" className="btn btn-warning">Explore More</a>
 
-                                    </div></img>
+                                    </div>
 
                             </div>
 
                         </div>
 
-                        <div class="col-sm-6">
+                        <div className="col-sm-6">
 
-                            <div class="card">
+                            <div className="card">
 
-                                <img class="card-img-top" src="" alt="the image alt text here">
+                                <img src={undernourished}/>
 
-                                    <div class="card-body text-center">
+                                    <div className="card-body text-center">
 
-                                        <h5 class="card-title">Services Title 2</h5>
+                                        <h5 className="card-title">Services Title 2</h5>
 
-                                        <p class="card-text text-left">Place some text for the service 2 here. </p>
+                                        <p className="card-text text-left">Place some text for the service 2 here. </p>
 
-                                        <a href="#" class="btn btn-warning">More info</a>
+                                        <a href="/olympics/health/undernourished" className="btn btn-warning">Explore More</a>
 
-                                    </div></img>
+                                    </div>
 
                             </div>
 
@@ -65,6 +68,7 @@ class HealthPage extends React.Component {
                     </div>
                 </div>
             </div>
+
                     )
     }
                     }

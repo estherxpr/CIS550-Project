@@ -3,8 +3,9 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-//import "../style/PageNavbar.css";
+import "../style/menuBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "./Olympedia.svg";
 
 export default class MenuNavBar extends React.Component {
     constructor(props) {
@@ -16,19 +17,19 @@ export default class MenuNavBar extends React.Component {
     }
 
     componentDidMount() {
-        const pageList = ["home", "search", "best", "logout"];
+        const pageList = ["2020 Olympics", "year", "GDP", "health"];
 
         const navbarDivs = pageList.map((page, i) => {
             // eslint-disable-next-line react/prop-types
             if (this.props.active === page) {
                 return (
-                    <a className="nav-item nav-link active" key={i} href={`/${page}`}>
+                    <a className="nav-item nav-link active" key={i} href={`/olympics/${page}`}>
                         {page.charAt(0).toUpperCase() + page.substring(1, page.length)}
                     </a>
                 );
             }
             return (
-                <a className="nav-item nav-link" key={i} href={`/${page}`}>
+                <a className="nav-item nav-link" key={i} href={`/olympics/${page}`}>
                     {page.charAt(0).toUpperCase() + page.substring(1, page.length)}
                 </a>
             );
@@ -42,16 +43,17 @@ export default class MenuNavBar extends React.Component {
     render() {
         return (
             <div className="PageNavbar">
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a className="navbar-brand center">
-                        <img
-                            src="https://img.icons8.com/cotton/64/000000/bread-and-rye--v1.png"
+                <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
+                    <a className="navbar-brand">
+                        <span className="img-container"><img
+                            src={logo}
                             width="45"
                             height="45"
                             className="d-inline-block icon"
                             loading="lazy"
-                        />
-                        <p className="web-name">RecipeGo</p>
+                        /></span>
+
+                        <p className="web-name centered-and-flexed">Olympedia</p>
                     </a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav ml-auto">{this.state.navDivs}</div>

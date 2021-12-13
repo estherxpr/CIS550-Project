@@ -31,7 +31,7 @@ app.get('/olympics/sports', routes.country_sport_performance)
 app.get('/olympics/athletes', routes.country_athletes_performance)
 
 // Route 7
-app.get('/GDP/countries', routes.country_gdp_with_performance)
+app.get('/olympics/GDP', routes.country_gdp_with_performance)
 
 // Route 7
 app.get('/search/GDP/countries', routes.search_country_gdp_with_performance)

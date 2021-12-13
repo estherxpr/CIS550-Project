@@ -11,7 +11,7 @@ import {
 
 } from 'antd'
 import "../style/table.css";
-import {getUndernourishedRate} from '../fetcher'
+import {getUndernourishedRate} from '../healthFetcher'
 
 
 import MenuBar from '../components/MenuBar';
@@ -75,13 +75,14 @@ class UndernourishedPage extends React.Component {
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Year</label>
-                            <Select defaultValue="2016" style={{ width: 120 }} onChange={this.handleYearQueryChange}>
+                            <div><Select defaultValue="2016" style={{ width: 120 }} onChange={this.handleYearQueryChange}>
                                 <Option value="2016">2016</Option>
                                 <Option value="2012">2012</Option>
                                 <Option value="2008">2008</Option>
                                 <Option value="2004">2004</Option>
                                 <Option value="2000">2000</Option>
-                            </Select>
+                            </Select></div>
+
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '10vw' }}>
                             <Button style={{ marginTop: '4vh' }} onClick={this.updateSearchResults}>Search</Button>

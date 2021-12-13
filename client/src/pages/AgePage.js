@@ -11,7 +11,7 @@ import {
 
 } from 'antd'
 import "../style/table.css";
-import { getAgeSearch } from '../fetcher'
+import { getAgeSearch } from '../healthFetcher'
 
 import MenuBar from '../components/MenuBar';
 
@@ -21,14 +21,14 @@ const ageColumns = [
     {
         title: 'Country',
         dataIndex: 'Country',
-        key: 'Country',
+        key: 'Country_age',
         sorter: (a, b) => a.Name.localeCompare(b.Name),
         //render: (text, row) => <a href={`/players?id=${row.PlayerId}`}>{text}</a>
     },
     {
         title: 'Year',
         dataIndex: 'Year',
-        key: 'Year',
+        key: 'Year_age',
         sorter: (a, b) => (b.Year - a.Year)
     },
     {
@@ -85,12 +85,12 @@ class AgePage extends React.Component {
     }
 
     handleYearQueryChange(value) {
-        console.log(value);
+        //console.log(value);
         this.setState({ yearQuery: value })
     }
     
     handleSportQueryChange(event) {
-        console.log(event);
+        //console.log(event);
         this.setState({ countryQuery: event.target.value })
     }
 
@@ -126,13 +126,14 @@ class AgePage extends React.Component {
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Year</label>
+                            <div>
                             <Select defaultValue="2016" style={{ width: 120 }} onChange={this.handleYearQueryChange}>
                                 <Option value="2016">2016</Option>
                                 <Option value="2012">2012</Option>
                                 <Option value="2008">2008</Option>
                                 <Option value="2004">2004</Option>
                                 <Option value="2000">2000</Option>
-                            </Select>
+                            </Select></div>
                         </FormGroup></Col>
                         <Col flex={2}><FormGroup style={{ width: '10vw' }}>
                             <Button style={{ marginTop: '4vh' }} onClick={this.updateSearchResults}>Search</Button>
