@@ -3,6 +3,7 @@ node_modules/
 package-lock.json
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# christina
 # dependencies
 /node_modules
 /.pnp
@@ -13,7 +14,11 @@ package-lock.json
 
 # production
 /build
+<<<<<<< HEAD
 /config.json
+=======
+
+>>>>>>> main
 # misc
 .DS_Store
 .env.local
