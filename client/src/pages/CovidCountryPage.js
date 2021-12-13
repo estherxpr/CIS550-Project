@@ -126,7 +126,6 @@ class CovidCountryPage extends React.Component {
         });
 
         getCountryPerform(this.state.questionCountry).then(res => {
-            console.log(res.results[0].Total_Medal);
             this.setState({ questionAnswer: res.results[0] });
             this.setState({ userAnswer: null });
             this.setState({ showAnswer: false });
@@ -140,22 +139,22 @@ class CovidCountryPage extends React.Component {
                 <Row>
                     <Col span={6}>
                         <Row>
-                            <FormGroup style={{  margin: '15px 0px 15px 20px' }}>
+                            <FormGroup style={{width: '40%', margin: '15px 0px 15px 20px' }}>
                                 <label>Search Nations</label>
                                 <FormInput placeholder="Country Name" value={this.state.Country} onChange={this.handleSearchCountry} />
                             </FormGroup>
-                            <FormGroup style={{ margin: '15px 0px 15px 20px' }}>
+                            <FormGroup style={{ margin: '15px 0px 15px 25px' }}>
                                 <label>Confirmed Rate</label>
                                 <Slider range defaultValue={[0, 100]} onChange={this.handleSearchConfirmedRate} />
                             </FormGroup>
-                            <FormGroup style={{ margin: 'auto 60px' }}>
-                                <Button style={{ height: '30px', textAlign: 'center', lineHeight: '0px' }} onClick={this.updateSearchResults}>Search</Button>
+                            <FormGroup style={{ margin: 'auto 20px' }}>
+                                <Button style={{ width: '100px', height: '30px', textAlign: 'center', lineHeight: '0px' }} onClick={this.updateSearchResults}>Search</Button>
                             </FormGroup>
                         </Row>
                         <Row>
                             <Table onRow={(record, rowIndex) => {
                                 return {onClick: event => {this.showCard(record.Country)},};
-                            }} style={{ width: '100%', marginTop: '15px' }} dataSource={this.state.CovidCountryResults} columns={CovidCountryColumns} pagination={{ defaultPageSize: 8, simple: true }}/>
+                            }} style={{ width: '100%', marginTop: '15px' }} dataSource={this.state.CovidCountryResults} columns={CovidCountryColumns} pagination={{ defaultPageSize: 8, simple: true }} rowKey={record=>record.Country}/>
                         </Row>
                     </Col>
                     <Col span={18}>
@@ -166,7 +165,7 @@ class CovidCountryPage extends React.Component {
                             Guess the performance of the country below is in Upper / Lower class for 2020 Tokyo Olympics
                         </p>
                         <Card style={{ maxWidth: '50vw', margin: '0 auto', marginTop: '50px'}}>
-                            <CardHeader>
+                            <CardHeader style={{backgroundColor: '#d9d9d9'}}>
                                 <h3>{this.state.questionCountry}</h3>
                             </CardHeader>
                             <CardBody>
@@ -206,17 +205,17 @@ class CovidCountryPage extends React.Component {
                                                     <h2 style={{color:'#2894FF'}}>{this.state.questionAnswer.Ranking < this.state.questionAvg? 'Upper Class':'Lower Class'}</h2>
                                                 </Row>
                                                 <Row>
-                                                    { this.state.userAnswer == (this.state.questionAnswer.Ranking < this.state.questionAvg)
+                                                    { this.state.userAnswer === (this.state.questionAnswer.Ranking < this.state.questionAvg)
                                                       ? (<h2 style={{color:'#00a600'}}>Correct!</h2>):(<h2 style={{color:'#ea0000'}}>Wrong!</h2>)}
                                                 </Row>
                                             </Col>
                                         </Row>
                                     )
                                     : (
-                                        <h1 style={{ margin: '50px auto', textAlign: 'center', fontSize: '5em' }}>🔮</h1> 
+                                        <h1 style={{ margin: '80px auto', textAlign: 'center', fontSize: '5em' }}>🔮</h1> 
                                     ) }
                             </CardBody>
-                            <CardFooter>
+                            <CardFooter style={{backgroundColor:'#d9d9d9'}}>
 								<Row>
 									<Col span={12}>
 										<Row justify='center'>
