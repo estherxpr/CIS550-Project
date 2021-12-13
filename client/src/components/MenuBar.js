@@ -20,8 +20,24 @@ class MenuBar extends React.Component {
                 2020 Olympics
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink active  href="/olympics/year">
+                Year
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink active  href="/olympics/year/country">
+                Country
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink active  href="/olympics/sports">
+                Sports
+              </NavLink>
+            </NavItem>
           </Nav>
         </Navbar>
+        
        );
     }
 }
