@@ -1,9 +1,9 @@
 {
-  "short_name": "FIFA Client",
-  "name": "CIS 550 - HW2 FIFA Client",
+  "short_name": "Olymepdia",
+  "name": "CIS 550 - Final Project",
   "icons": [
     {
-      "src": "football.svg",
+      "src": "Olympedia.svg",
       "type": "image/png",
       "sizes": "512x512"
     }
