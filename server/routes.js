@@ -251,15 +251,17 @@ async function olympics_health_age(req, res) {
 async function olympics_health_undernourished(req, res) {
     const country = req.query.Country ? '%' + req.query.Country + '%' : '%%';
     const year = req.query.Year ? req.query.Year : 2016;
+    // 615 to 574ms
     const query = `
 		WITH M AS (
             SELECT A.NOC AS NOC, A.Year AS Year, COUNT(*) AS medals_numbers
             FROM Athlete A
+            WHERE A.Year = ${year}
             GROUP BY A.NOC, A.Year
         )
-		SELECT H.country AS Country,M.Year AS Year,M.medals_numbers AS total_medals,H.Undernourished_Rate AS Undernourished_Rate
-		FROM M JOIN Health H ON M.NOC = H.country_code AND H.Year = M.Year
-		WHERE H.Country LIKE '${country}' AND H.Year = ${year};
+		SELECT HY.country AS Country,M.Year AS Year,M.medals_numbers AS total_medals,HY.Undernourished_Rate AS Undernourished_Rate
+		FROM M JOIN (SELECT * FROM Health H WHERE H.year = ${year}) HY ON M.NOC = HY.country_code AND M.Year = HY.Year
+		WHERE HY.Country LIKE '${country}';
     `;
     connection.query(query, function (err, rows, fields) {
         if (err) {
