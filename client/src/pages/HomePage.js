@@ -96,9 +96,8 @@ class HomePage extends React.Component {
                             <div className="carousel-caption d-none d-md-block">
                                 <div className="card">
                                     <div className="card-body">
-                                        <h5 className="card-title">Special title treatment</h5>
-                                        <p className="card-text">With supporting text below as a natural lead-in to
-                                            additional content.</p>
+                                        <h5 className="card-title">Is GDP related to performance?</h5>
+                                        <p className="card-text">GDP is an important indicator for a country's development, so would countries' with higher GDP also performed better?</p>
                                         <a href="/olympics/GDP" className="btn btn-primary btn-home">Learn More</a>
                                     </div>
                                 </div>
@@ -109,9 +108,8 @@ class HomePage extends React.Component {
                         <div className="carousel-caption d-none d-md-block">
                             <div className="card">
                                 <div className="card-body">
-                                    <h5 className="card-title">Special title treatment</h5>
-                                    <p className="card-text">With supporting text below as a natural lead-in to
-                                        additional content.</p>
+                                    <h5 className="card-title">How would a country's health level influence its performance?</h5>
+                                    <p className="card-text">We choose the athletes' age and the percentage of undernourished population of a country to evaluate hea;th level? So does performance related to it?</p>
                                     <a href="/olympics/health" className="btn btn-primary btn-home">Learn More</a>
                                 </div>
                             </div>
