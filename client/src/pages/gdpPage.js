@@ -4,7 +4,6 @@ import { Form, FormInput, FormGroup, Button } from "shards-react";
 
 import {
     Table,
-    Pagination,
     Row,
     Col,
     Divider, Select,
@@ -70,7 +69,7 @@ class GdpPage extends React.Component {
                 <div id="gdp">
                     <h2>Country's GDP & performance</h2></div>
                 <Form style={{ width: '80vw', margin: '0 auto', marginTop: '5vh' }}>
-                    <Row>
+                    <Row key="GDP-rows">
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
                             <label>Country</label>
                             <FormInput placeholder="Country" value={this.state.countryQuery} onChange={this.handleCountryQueryChange} />
@@ -92,7 +91,7 @@ class GdpPage extends React.Component {
                 </Form>
                 <Divider />
                 <div className="container">
-                <Table class = "GDP-table" dataSource={this.state.gdpResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
+                <Table class = "GDP-table" dataSource={this.state.gdpResults} rowKey={obj=> obj.Country} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
                         <Column title="Country" dataIndex="Country" key="Country_gdp" sorter= {(a, b) => a.Country.localeCompare(b.Country)}/>
                         <Column title="Year" dataIndex="Year" key="Year_gdp" sorter= {(a, b) => b.Year - a.Year}/>
                         <Column title="GDP (current US$)" dataIndex="GDP" key="GDP(in dollars)" sorter= {(a, b) => b.GDP.toFixed(10) - a.GDP.toFixed(10)}/>

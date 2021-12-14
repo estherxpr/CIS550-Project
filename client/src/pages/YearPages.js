@@ -1,20 +1,16 @@
 import React from 'react';
-import { Form, FormInput, FormGroup, Button, Card, CardBody, CardTitle, Progress } from "shards-react";
-
 
 import {
     Table,
-    Pagination,
     Row,
-    Col,
-    Divider,
+    Col
 } from 'antd'
 
 import { getAllCountriesOfYear} from '../Countryfetcher'
 
 import MenuNavBar from '../components/MenuNavBar';
 
-const { Column, ColumnGroup } = Table;
+//const { Column, ColumnGroup } = Table;
 // const { Option } = Select;
   
   const columns = [
@@ -100,15 +96,15 @@ class YearPages extends React.Component {
                     </Col>
                 </Row>
                 <Row gutter='30' align='middle' justify='center' style={{ margin: '20px auto' }}>
-                    <select style={{ width: 120 }} onChange={(e) => {this.updateYearResults(e.target.value)}}>
-                    <option selected value="2016">2016</option>
+                    <select style={{ width: 120 }} defaultValue="2016" onChange={(e) => {this.updateYearResults(e.target.value)}}>
+                    <option value="2016">2016</option>
                     <option value="2012">2012</option>
                     <option value="2008">2008</option>
                     <option value="2004">2004</option>
                     <option value="2000">2000</option>
                     </select>
                 </Row>   
-                <Table dataSource={this.state.yearResults} columns={columns} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}/>
+                <Table dataSource={this.state.yearResults} rowKey={obj=> obj.NOC} columns={columns} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}/>
             </div>
             
           </div>

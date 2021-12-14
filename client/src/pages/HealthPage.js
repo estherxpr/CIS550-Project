@@ -48,7 +48,7 @@ class HealthPage extends React.Component {
 
                             <div className="card">
 
-                                <img src={undernourished} alt-text="undernourished"/>
+                                <img src={undernourished} alt="undernourished"/>
 
                                 <div className="card-body text-center">
 

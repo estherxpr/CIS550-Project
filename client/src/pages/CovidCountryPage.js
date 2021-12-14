@@ -1,6 +1,5 @@
 import React from 'react';
-import { 
-    Form,
+import {
     FormInput,
     FormGroup,
     Button,
@@ -8,21 +7,19 @@ import {
     Card,
     CardHeader,
     CardBody,
-    CardTitle,
     CardFooter,
 }
 from "shards-react";
 
 import {
     Table,
-    Pagination,
     Row,
     Col,
     Slider,
-    Divider,
+    Divider
 } from 'antd'
-import { RadarChart } from 'react-vis';
-import { format } from 'd3-format';
+//import { RadarChart } from 'react-vis';
+//import { format } from 'd3-format';
 
 import MenuNavBar from '../components/MenuNavBar';
 import {
@@ -31,7 +28,7 @@ import {
     getCountryPerform,
     getCovidCountryMark,
 } from '../covidFetcher';
-const wideFormat = format('.3r');
+//const wideFormat = format('.3r');
 
 // render: (text, row) => <a href={`/players?id=${row.PlayerId}`}>{text}</a>
 const CovidCountryColumns = [

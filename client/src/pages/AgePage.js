@@ -4,7 +4,6 @@ import { Form, FormInput, FormGroup, Button } from "shards-react";
 
 import {
     Table,
-    Pagination,
     Row,
     Col,
     Divider, Select,
@@ -15,7 +14,7 @@ import { getAgeSearch } from '../healthFetcher'
 
 import MenuNavBar from '../components/MenuNavBar';
 
-const { Column } = Table;
+//const { Column } = Table;
 const { Option } = Select;
 const ageColumns = [
     {
@@ -136,7 +135,7 @@ class AgePage extends React.Component {
                 </Form>
                 <Divider />
                 <div className="container">
-                    <Table class = "Age-table" columns={ageColumns} dataSource={this.state.ageResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
+                    <Table class = "Age-table" columns={ageColumns} dataSource={this.state.ageResults} rowKey={obj=> obj.Country} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
                     </Table>
                 </div>
             </div>

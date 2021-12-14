@@ -1,13 +1,10 @@
 import React from 'react';
-import { Form, FormInput, FormGroup, Button, Card, CardBody, CardTitle, Progress, CardSubtitle } from "shards-react";
+import { Form, FormInput, FormGroup, Button, Card, CardBody } from "shards-react";
 
 
 import {
-    Table,
-    Pagination,
     Row,
-    Col,
-    Divider,
+    Col
 
 } from 'antd'
 
@@ -15,7 +12,7 @@ import {getCountryOfYear} from '../Countryfetcher'
 
 import MenuNavBar from '../components/MenuNavBar';
 
-const { Column, ColumnGroup } = Table;
+//const { Column, ColumnGroup } = Table;
 // const { Option } = Select;
 
 class CountryPages extends React.Component {
