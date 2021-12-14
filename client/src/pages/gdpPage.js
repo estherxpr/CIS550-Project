@@ -68,7 +68,7 @@ class GdpPage extends React.Component {
             <div>
                 <MenuNavBar />
                 <div id="gdp">
-                    <h2>Country's GDP vs. performance</h2></div>
+                    <h2>Country's GDP & performance</h2></div>
                 <Form style={{ width: '80vw', margin: '0 auto', marginTop: '5vh' }}>
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>
