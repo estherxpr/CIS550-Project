@@ -54,7 +54,7 @@ export default class MenuNavBar extends React.Component {
         return (
             <div className="PageNavbar">
                 <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
-                    <a className="navbar-brand">
+                    <a className="navbar-brand" style={{textDecoration:"none", color:"#FFFFFF"}} href="/">
                         <span className="img-container"><img
                             src={logo}
                             width="45"
@@ -62,8 +62,7 @@ export default class MenuNavBar extends React.Component {
                             className="d-inline-block icon"
                             loading="lazy"
                         />
-
-                        <p className="web-name centered-and-flexed"><a style={{textDecoration:"none", color:"#FFFFFF"}} href="/">Olympedia</a></p></span>
+                        <p className="web-name centered-and-flexed">Olympedia</p></span>
                     </a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav ml-auto">{this.state.navDivs}</div>

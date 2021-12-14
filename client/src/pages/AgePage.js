@@ -118,6 +118,8 @@ class AgePage extends React.Component {
         return (
             <div>
                 <MenuNavBar />
+                <div id="health">
+                <h2>Athlete's Age Details</h2></div>
                 <Form style={{ width: '80vw', margin: '0 auto', marginTop: '5vh' }}>
                     <Row>
                         <Col flex={2}><FormGroup style={{ width: '20vw', margin: '0 auto' }}>

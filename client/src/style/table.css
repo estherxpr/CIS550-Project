@@ -13,3 +13,12 @@
 .btn{
     border: 0px solid #fff !important; 
 }
+
+#health{
+    padding:15px 0px;
+    text-align: center;
+}
+#gdp{
+    padding:15px 0px;
+    text-align: center;
+}
