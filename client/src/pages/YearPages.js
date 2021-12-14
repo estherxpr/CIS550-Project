@@ -76,7 +76,7 @@ class YearPages extends React.Component {
     } 
 
     updateYearResults(obj) {  
-        // this.setState({year:parseInt(event.target.value)})
+        this.setState({year:parseInt(obj)})
         getAllCountriesOfYear(parseInt(obj)).then(res => {
             this.setState({ yearResults: res.results })
         }) 
