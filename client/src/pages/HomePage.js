@@ -47,7 +47,7 @@ class HomePage extends React.Component {
                                         <h5 className="card-title">Special title treatment</h5>
                                         <p className="card-text">With supporting text below as a natural lead-in to
                                             additional content.</p>
-                                        <a href="/page/covidcountry" className="btn btn-primary">Go somewhere</a>
+                                        <a href="/page/covidcountry" className="btn btn-primary btn-home">Go somewhere</a>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@ class HomePage extends React.Component {
                                         <h5 className="card-title">Special title treatment</h5>
                                         <p className="card-text">With supporting text below as a natural lead-in to
                                             additional content.</p>
-                                        <a href="/olympics/year" className="btn btn-primary">Go somewhere</a>
+                                        <a href="/olympics/year" className="btn btn-primary btn-home">Go somewhere</a>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ class HomePage extends React.Component {
                                         <h5 className="card-title">Special title treatment</h5>
                                         <p className="card-text">With supporting text below as a natural lead-in to
                                             additional content.</p>
-                                        <a href="olympics/year/country" className="btn btn-primary">Go somewhere</a>
+                                        <a href="olympics/year/country" className="btn btn-primary btn-home">Go somewhere</a>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@ class HomePage extends React.Component {
                                         <h5 className="card-title">Special title treatment</h5>
                                         <p className="card-text">With supporting text below as a natural lead-in to
                                             additional content.</p>
-                                        <a href="/olympics/sports" className="btn btn-primary">Go somewhere</a>
+                                        <a href="/olympics/sports" className="btn btn-primary btn-home">Go somewhere</a>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@ class HomePage extends React.Component {
                                         <h5 className="card-title">Special title treatment</h5>
                                         <p className="card-text">With supporting text below as a natural lead-in to
                                             additional content.</p>
-                                        <a href="/olympics/GDP" className="btn btn-primary">Go somewhere</a>
+                                        <a href="/olympics/GDP" className="btn btn-primary btn-home">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@ class HomePage extends React.Component {
                                     <h5 className="card-title">Special title treatment</h5>
                                     <p className="card-text">With supporting text below as a natural lead-in to
                                         additional content.</p>
-                                    <a href="/olympics/health" className="btn btn-primary">Go somewhere</a>
+                                    <a href="/olympics/health" className="btn btn-primary btn-home">Learn More</a>
                                 </div>
                             </div>
                         </div>

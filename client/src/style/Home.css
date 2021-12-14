@@ -27,3 +27,7 @@
     font-size: larger;
     border:none;
 }
+
+.btn-home {
+    background: green;
+}
