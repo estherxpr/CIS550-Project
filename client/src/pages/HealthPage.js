@@ -22,8 +22,8 @@ class HealthPage extends React.Component {
                 <MenuNavBar />
                 <div style={{ width: '70vw', margin: '0 auto', marginTop: '5vh', marginBottom:'10vh', paddingBottom:'10vh'}} className="container">
 
-                    <h3>Health</h3>
-
+                    <h2>Health</h2>
+                    <p className="health-detail"><strong>Usually, the health of athletes, and the country's health condition would have influences on country's performance. Let's explore more details about them!</strong></p>
                     <div className="row">
 
                         <div className="col-sm-6">
@@ -34,10 +34,8 @@ class HealthPage extends React.Component {
 
                                     <div className="card-body text-center">
 
-                                        <h5 className="card-title">Services Title 1</h5>
-
-                                        <p className="card-text text-left">Place some text for the service 1 here. </p>
-
+                                        <h5 className="card-title">Athletes' Age Details</h5>
+                                        <p className="card-text text-left"> </p>
                                         <a style={{color:"#ffffff", background:"#66CDAA"}} href="/olympics/health/age" className="btn btn-warning">Explore More</a>
 
                                     </div>
@@ -54,10 +52,8 @@ class HealthPage extends React.Component {
 
                                     <div className="card-body text-center">
 
-                                        <h5 className="card-title">Services Title 2</h5>
-
-                                        <p className="card-text text-left">Place some text for the service 2 here. </p>
-
+                                        <h5 className="card-title">Country's Undernourished Rate</h5>
+                                        <p className="card-text text-left"> </p>
                                         <a href="/olympics/health/undernourished" className="btn btn-warning">Explore More</a>
 
                                     </div>

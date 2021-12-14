@@ -22,7 +22,7 @@ class HomePage extends React.Component {
 
         return (
             
-            <div>
+
                 <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active"
@@ -47,25 +47,75 @@ class HomePage extends React.Component {
                                         <h5 className="card-title">Special title treatment</h5>
                                         <p className="card-text">With supporting text below as a natural lead-in to
                                             additional content.</p>
-                                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                                        <a href="/page/covidcountry" className="btn btn-primary">Go somewhere</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="carousel-item" data-bs-interval="2000">
                             <img src={img2} className="d-block w-100" alt="..."/>
+                            <div className="carousel-caption d-none d-md-block">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Special title treatment</h5>
+                                        <p className="card-text">With supporting text below as a natural lead-in to
+                                            additional content.</p>
+                                        <a href="/olympics/year/country" className="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="carousel-item">
                             <img src={img3} className="d-block w-100" alt="..."/>
+                            <div className="carousel-caption d-none d-md-block">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Special title treatment</h5>
+                                        <p className="card-text">With supporting text below as a natural lead-in to
+                                            additional content.</p>
+                                        <a href="/olympics/" className="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="carousel-item">
                             <img src={img4} className="d-block w-100" alt="..."/>
+                            <div className="carousel-caption d-none d-md-block">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Special title treatment</h5>
+                                        <p className="card-text">With supporting text below as a natural lead-in to
+                                            additional content.</p>
+                                        <a href="/page/covidcountry" className="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="carousel-item">
                             <img src={img5} className="d-block w-100" alt="..."/>
+                            <div className="carousel-caption d-none d-md-block">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Special title treatment</h5>
+                                        <p className="card-text">With supporting text below as a natural lead-in to
+                                            additional content.</p>
+                                        <a href="/page/covidcountry" className="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         '<div className="carousel-item">
                         <img src={img6} className="d-block w-100" alt="..."/>
+                        <div className="carousel-caption d-none d-md-block">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title">Special title treatment</h5>
+                                    <p className="card-text">With supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                    <a href="/page/covidcountry" className="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
@@ -79,7 +129,7 @@ class HomePage extends React.Component {
                         <span className="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
+
 
         )
     }
