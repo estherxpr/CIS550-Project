@@ -59,7 +59,7 @@ class HomePage extends React.Component {
                                     <div className="card-body">
                                         <h5 className="card-title">Overview of the Olympics in different year</h5>
                                         <p className="card-text">Check out which country perform the best in each year Olympics</p>
-                                        <a href="/olympics/year" className="btn btn-primary btn-home">Go somewhere</a>
+                                        <a href="/olympics/year" className="btn btn-primary btn-home">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@ class HomePage extends React.Component {
                                         <h5 className="card-title">The performance for a country in specific Olympic year</h5>
                                         <p className="card-text">How well did the country perform in different year, and what is the average age and gender ratio for the athletes of 
                                         the coutry in that year?</p>
-                                        <a href="olympics/year/country" className="btn btn-primary btn-home">Go somewhere</a>
+                                        <a href="olympics/year/country" className="btn btn-primary btn-home">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@ class HomePage extends React.Component {
                                         <h5 className="card-title">The performance for a country in differnt field of Sport</h5>
                                         <p className="card-text">How well did the country perform in different sports, and what is the average age and gender ratio for the athletes of 
                                         the coutry in that sport?</p>
-                                        <a href="/olympics/sports" className="btn btn-primary btn-home">Go somewhere</a>
+                                        <a href="/olympics/sports" className="btn btn-primary btn-home">Learn More</a>
                                     </div>
                                 </div>
                             </div>
