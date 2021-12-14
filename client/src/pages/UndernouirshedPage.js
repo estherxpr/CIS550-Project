@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormInput, FormGroup, Button, Card, CardBody, CardTitle, Progress } from "shards-react";
+import { Form, FormInput, FormGroup, Button } from "shards-react";
 
 
 import {
@@ -31,23 +31,16 @@ class UndernourishedPage extends React.Component {
         this.handleCountryQueryChange = this.handleCountryQueryChange.bind(this)
         this.handleYearQueryChange = this.handleYearQueryChange.bind(this)
         this.updateSearchResults = this.updateSearchResults.bind(this)
-        this.goToCountry = this.goToCountry.bind(this)
 
     }
 
     handleCountryQueryChange(event) {
-        console.log("country");
-        console.log(this.state.countryQuery);
         this.setState({ countryQuery: event.target.value })
     }
 
     handleYearQueryChange(value) {
-        console.log(value);
         this.setState({ yearQuery: value })
 
-    }
-    goToCountry(country,year) {
-        window.location = `/GDP/countries?Country=${country}&Year=${year}`
     }
 
     updateSearchResults() {
@@ -93,11 +86,7 @@ class UndernourishedPage extends React.Component {
                 </Form>
                 <Divider />
                 <div className="container">
-                    <Table class = "GDP-table" onRow={(record, rowIndex) => {
-                        return {
-                            onClick: event => {this.goToCountry(record.Country,record.Year)}, // clicking a row takes the user to a detailed view of the match in the /matches page using the MatchId parameter
-                        };
-                    }} dataSource={this.state.undernourishedResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
+                    <Table class = "GDP-table" dataSource={this.state.undernourishedResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
                         <Column title="Country" dataIndex="Country" key="Country" sorter= {(a, b) => a.Country.localeCompare(b.Country)}/>
                         <Column title="Year" dataIndex="Year" key="Year" sorter= {(a, b) => b.Year - a.Year}/>
                         <Column title="Undernourished Rate" dataIndex="Undernourished_Rate" key="Undernourished_Rate" sorter= {(a, b) => b.Undernourished_Rate.toFixed(10)- a.Undernourished_Rate.toFixed(10)}/>

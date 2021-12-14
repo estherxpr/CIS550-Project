@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormInput, FormGroup, Button, Card, CardBody, CardTitle, Progress } from "shards-react";
+import { Form, FormInput, FormGroup, Button } from "shards-react";
 
 
 import {
@@ -75,27 +75,19 @@ class AgePage extends React.Component {
         this.handleCountryQueryChange = this.handleCountryQueryChange.bind(this)
         this.handleYearQueryChange = this.handleYearQueryChange.bind(this)
         this.updateSearchResults = this.updateSearchResults.bind(this)
-        this.goToCountry = this.goToCountry.bind(this)
     }
 
     handleCountryQueryChange(event) {
-        console.log("country");
-        console.log(this.state.countryQuery);
         this.setState({ countryQuery: event.target.value })
     }
 
     handleYearQueryChange(value) {
-        //console.log(value);
         this.setState({ yearQuery: value })
     }
     
     handleSportQueryChange(event) {
         //console.log(event);
         this.setState({ countryQuery: event.target.value })
-    }
-
-    goToCountry(country) {
-        window.location = `/olympics/health/age?Country=${country}`
     }
 
     updateSearchResults() {
@@ -144,11 +136,7 @@ class AgePage extends React.Component {
                 </Form>
                 <Divider />
                 <div className="container">
-                    <Table class = "Age-table" columns={ageColumns} onRow={(record, rowIndex) => {
-                        return {
-                            onClick: event => {this.goToCountry(record.Country,record.Year)}, // clicking a row takes the user to a detailed view of the match in the /matches page using the MatchId parameter
-                        };
-                    }} dataSource={this.state.ageResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
+                    <Table class = "Age-table" columns={ageColumns} dataSource={this.state.ageResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
                     </Table>
                 </div>
             </div>
