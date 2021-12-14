@@ -6,6 +6,7 @@ import React from 'react';
 //     Card
 // } from 'antd';
 import "../style/Home.css";
+import MenuNavBar from "../components/MenuNavBar";
 import img1 from "./photos/img1.webp";
 import img2 from "./photos/img2.jfif";
 import img3 from "./photos/img3.webp";
@@ -21,9 +22,9 @@ class HomePage extends React.Component {
     render() {
 
         return (
-            
 
                 <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
+                       <MenuNavBar /> 
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active"
                                 aria-current="true" aria-label="Slide 1"></button>
@@ -39,21 +40,23 @@ class HomePage extends React.Component {
                                 aria-label="Slide 6"></button>
                     </div>
                     <div className="carousel-inner">
-                        <div className="carousel-item active" data-bs-interval="200">
-                            <img src={img1} className="d-block w-100" alt="..."/>
+                        <div className="carousel-item active" data-bs-interval="2000">
+                            <img src={img1} className="d-block w-100" style={{height:'100vh', marginTop:'-95px'}} alt="..."/>
                             <div className="carousel-caption d-none d-md-block">
                                 <div className="card">
                                     <div className="card-body">
-                                        <h5 className="card-title">Special title treatment</h5>
-                                        <p className="card-text">With supporting text below as a natural lead-in to
-                                            additional content.</p>
-                                        <a href="/page/covidcountry" className="btn btn-primary btn-home">Go somewhere</a>
+                                        <h5 className="card-title">2020 Tokyo Olympics</h5>
+                                        <p className="card-text">
+                                            Make a guess! Take the COVID-19 situation of each country as references, and guess the
+                                            performance for them in 2020 Tokyo Olympics!
+                                        </p>
+                                        <a href="/page/covidcountry" className="btn btn-primary btn-home">Play!</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item" data-bs-interval="2000">
-                            <img src={img2} className="d-block w-100" alt="..."/>
+                        <div className="carousel-item" >
+                            <img src={img2} className="d-block w-100"  style={{height:'100vh', marginTop:'-95px'}} alt="..."/>
                             <div className="carousel-caption d-none d-md-block">
                                 <div className="card">
                                     <div className="card-body">
@@ -64,8 +67,8 @@ class HomePage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item">
-                            <img src={img3} className="d-block w-100" alt="..."/>
+                        <div className="carousel-item" >
+                            <img src={img3} className="d-block w-100" style={{height:'100vh', marginTop:'-95px'}} alt="..."/>
                             <div className="carousel-caption d-none d-md-block">
                                 <div className="card">
                                     <div className="card-body">
@@ -77,8 +80,8 @@ class HomePage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item">
-                            <img src={img4} className="d-block w-100" alt="..."/>
+                        <div className="carousel-item" >
+                            <img src={img4} className="d-block w-100" style={{height:'100vh', marginTop:'-95px'}} alt="..."/>
                             <div className="carousel-caption d-none d-md-block">
                                 <div className="card">
                                     <div className="card-body">
@@ -90,8 +93,8 @@ class HomePage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item">
-                            <img src={img5} className="d-block w-100" alt="..."/>
+                        <div className="carousel-item" >
+                            <img src={img5} className="d-block w-100" style={{height:'100vh', marginTop:'-95px'}} alt="..."/>
                             <div className="carousel-caption d-none d-md-block">
                                 <div className="card">
                                     <div className="card-body">
@@ -102,8 +105,8 @@ class HomePage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        '<div className="carousel-item">
-                        <img src={img6} className="d-block w-100" alt="..."/>
+                        <div className="carousel-item" >
+                        <img src={img6} className="d-block w-100" style={{height:'100vh', marginTop:'-95px'}} alt="..."/>
                         <div className="carousel-caption d-none d-md-block">
                             <div className="card">
                                 <div className="card-body">
