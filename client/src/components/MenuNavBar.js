@@ -63,7 +63,7 @@ export default class MenuNavBar extends React.Component {
                             loading="lazy"
                         />
 
-                        <p className="web-name centered-and-flexed">Olympedia</p></span>
+                        <p className="web-name centered-and-flexed"><a style={{textDecoration:"none", color:"#FFFFFF"}} href="/">Olympedia</a></p></span>
                     </a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav ml-auto">{this.state.navDivs}</div>
