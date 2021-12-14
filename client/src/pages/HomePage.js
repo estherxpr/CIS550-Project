@@ -1,10 +1,10 @@
 import React from 'react';
-import {
-    Table,
-    Pagination,
-    Select,
-    Card
-} from 'antd';
+// import {
+//     Table,
+//     Pagination,
+//     Select,
+//     Card
+// } from 'antd';
 import "../style/Home.css";
 import img1 from "./photos/img1.webp";
 import img2 from "./photos/img2.jfif";
@@ -12,8 +12,8 @@ import img3 from "./photos/img3.webp";
 import img4 from "./photos/img4.jfif";
 import img5 from "./photos/img5.webp";
 import img6 from "./photos/img6.jfif";
-const { Column, ColumnGroup } = Table;
-const { Option } = Select;
+// const { Column, ColumnGroup } = Table;
+// const { Option } = Select;
 
 
 class HomePage extends React.Component {

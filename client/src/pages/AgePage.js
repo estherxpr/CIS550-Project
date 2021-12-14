@@ -22,7 +22,7 @@ const ageColumns = [
         title: 'Country',
         dataIndex: 'Country',
         key: 'Country_age',
-        sorter: (a, b) => a.Name.localeCompare(b.Name),
+        sorter: (a, b) => a.Country.localeCompare(b.Country),
         //render: (text, row) => <a href={`/players?id=${row.PlayerId}`}>{text}</a>
     },
     {
@@ -56,7 +56,7 @@ const ageColumns = [
         title: 'Total Medals',
         dataIndex: 'total_medals',
         key: 'total_medals',
-
+        sorter:(a, b) => b.total_medals- a.total_medals
     }
 ];
 

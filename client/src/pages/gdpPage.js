@@ -95,7 +95,7 @@ class GdpPage extends React.Component {
                 <Table class = "GDP-table" dataSource={this.state.gdpResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
                         <Column title="Country" dataIndex="Country" key="Country_gdp" sorter= {(a, b) => a.Country.localeCompare(b.Country)}/>
                         <Column title="Year" dataIndex="Year" key="Year_gdp" sorter= {(a, b) => b.Year - a.Year}/>
-                        <Column title="GDP" dataIndex="GDP" key="GDP" sorter= {(a, b) => b.GDP.toFixed(10) - a.GDP.toFixed(10)}/>
+                        <Column title="GDP (current US$)" dataIndex="GDP" key="GDP(in dollars)" sorter= {(a, b) => b.GDP.toFixed(10) - a.GDP.toFixed(10)}/>
                         <Column title="Total Medals" dataIndex="medals_numbers" key="medals_numbers" sorter= {(a, b) => b.medals_numbers- a.medals_numbers}/>
                 </Table>
                     </div>

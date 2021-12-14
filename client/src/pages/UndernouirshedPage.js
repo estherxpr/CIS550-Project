@@ -86,10 +86,10 @@ class UndernourishedPage extends React.Component {
                 </Form>
                 <Divider />
                 <div className="container">
-                    <Table class = "GDP-table" dataSource={this.state.undernourishedResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
+                    <Table class = "undernourished-table" dataSource={this.state.undernourishedResults} pagination={{ pageSizeOptions:[5, 10], defaultPageSize: 5, showQuickJumper:true }}>
                         <Column title="Country" dataIndex="Country" key="Country" sorter= {(a, b) => a.Country.localeCompare(b.Country)}/>
                         <Column title="Year" dataIndex="Year" key="Year" sorter= {(a, b) => b.Year - a.Year}/>
-                        <Column title="Undernourished Rate" dataIndex="Undernourished_Rate" key="Undernourished_Rate" sorter= {(a, b) => b.Undernourished_Rate.toFixed(10)- a.Undernourished_Rate.toFixed(10)}/>
+                        <Column title="Undernourished Rate(%)" dataIndex="Undernourished_Rate" key="Undernourished_Rate" sorter= {(a, b) => b.Undernourished_Rate.toFixed(10)- a.Undernourished_Rate.toFixed(10)}/>
                         <Column title="Total Medals" dataIndex="total_medals" key="total_medals" sorter= {(a, b) => b.medals_numbers- a.medals_numbers}></Column>
                     </Table>
                 </div>
