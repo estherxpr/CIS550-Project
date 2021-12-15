@@ -207,7 +207,8 @@ async function search_country_gdp_with_performance(req, res) {
     const query = `
         WITH M AS (
             SELECT A.NOC AS NOC,A.Year AS Year, COUNT(*) AS medals_numbers
-            FROM Athlete A 
+            FROM Athlete A
+            WHERE A.Year = ${year} 
             GROUP BY A.NOC, A.Year
         )
 		SELECT G.country AS Country,M.Year,M.medals_numbers,G.GDP 
